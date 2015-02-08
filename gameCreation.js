@@ -15,10 +15,10 @@ GameFactory.createGame = function(playersIds){
     inProgress: true,
     started: new Date()
   };
-}
+};
 
 
-GameFactory.dealPlayers(players, deck){
+GameFactory.dealPlayers = function(players, deck){
   for (var i = 0; i < 3; i++){ // Giving 3 cards to each players.Thus going through table 3 times.
     Object.keys(players).forEach(function(id){
       players[id].hand.push(deck.shift());
@@ -38,9 +38,9 @@ function createPlayers(ids){
 
   ids.forEach(function(id){
     o[id] = {
-      hand = [],
-      pile = [],
-      score = {
+      hand : [],
+      pile : [],
+      score : {
         mostCoins: 0,
         mostCards: 0,
         setteBello: 0,

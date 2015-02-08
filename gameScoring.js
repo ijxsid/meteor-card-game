@@ -56,7 +56,7 @@ scoreGame = function(game){
   Object.keys(game.players).forEach(function(id){
     var s = game.players[id].score;
 
-    game.players[id].score.total = s.mostCards + s.mostCoins + s.primera + s.setteBello + s.scopa;
+    game.players[id].score.total = s.mostCards + s.mostCoins + s.primera  + s.setteBello + s.scopa;
 
     if (game.players[id].score.total > highest[1]){
       highest = [id, game.players[id].score.total];

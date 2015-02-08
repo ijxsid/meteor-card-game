@@ -77,3 +77,12 @@ li a:hover{
 #table #hand {
   min-height: 250px; 
 }
+
+table {
+  border-collapse: collapse;
+  border:1px solid #000; 
+}
+th, td{
+  border: 1px solid #000;
+  padding: 4px;
+}

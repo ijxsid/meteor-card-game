@@ -2,6 +2,9 @@
   {{>signupLogin}}
   {{#if currentUser}}
       {{> status}}
+    {{#unless inProgress}}
+      {{> score}}
+    {{/unless}}
     {{#if inProgress}}
       {{> table}}
       {{> hand}}
@@ -12,11 +15,53 @@
 
 
 
+
 <template name="status">
   <p><a href="/">&larr; Home</a></p>
   <h2>Game between you and {{otherPlayer.username}} {{#if inProgress}}{{#if yourTurn}} (Your Turn) {{/if}} {{/if}}</h2>
 </template>
 
+
+<template name="score">
+  <h1>Game Over! {{message}}</h1>
+  <table>
+    <tr>
+      <th>Category </th>
+      <th>You</th>
+      <th>{{otherPlayer.username}}</th>
+    </tr>
+    <tr>
+      <td>Most Cards</td>
+      <td>{{user.score.mostCards}}</td>
+      <td>{{otherPlayer.score.mostCards}}</td>
+    </tr>
+    <tr>
+      <td>Most Coins</td>
+      <td>{{user.score.mostCoins}}</td>
+      <td>{{otherPlayer.score.mostCoins}}</td>
+    </tr>
+    <tr>
+      <td>Sette Bello</td>
+      <td>{{user.score.setteBello}}</td>
+      <td>{{otherPlayer.score.setteBello}}</td>
+    </tr>
+    <tr>
+      <td>Primera</td>
+      <td>{{user.score.primera}}</td>
+      <td>{{otherPlayer.score.primera}}</td>
+    </tr>
+    <tr>
+      <td>Scopa</td>
+      <td>{{user.score.scopa}}</td>
+      <td>{{otherPlayer.score.scopa}}</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td>{{user.score.total}}</td>
+      <td>{{otherPlayer.score.total}}</td>
+    </tr>
+  </table>
+</template>
 
 <template name="table">
   <div id="table">

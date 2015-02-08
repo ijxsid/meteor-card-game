@@ -7,12 +7,14 @@
 </template>
 
 <template name="gameList">
-  <h1>Games</h1>
-  <ul>
-    {{#each games}}
-      {{> gameItem}}
-    {{/each}}
-  </ul>
+  <div class="column">
+    <h1>Games</h1>
+    <ul>
+      {{#each games}}
+        {{> gameItem}}
+      {{/each}}
+    </ul>
+  </div>
 </template>
 
 <template name="gameItem">
